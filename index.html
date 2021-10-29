@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>When Dropdown Value Change then Iframe SRC Change...</h2>
+<select id="dd" onchange="update_iframe_src(this.value)">
+    <option value="">Please Select</option>
+    <option value="https://booking.GeniusSoftware.co.uk/ProviderCourses.asp?CourseId=6506&ProviderId=245&SecId=190945">CPCS A17c - Telescopic Handler - Novice</option>
+    <option value="https://booking.GeniusSoftware.co.uk/ProviderCourses.asp?CourseId=6575&ProviderId=245&SecId=190945">CPCS A09a - Forward Tipping Dumper - Novice</option>
+    <option value="https://booking.GeniusSoftware.co.uk/ProviderCourses.asp?CourseId=6541&ProviderId=245&SecId=190945">CPCS A59a/c - 360 Excavator Above and Below 10 Tonnes - Novice</option>
+    <option value="https://booking.GeniusSoftware.co.uk/ProviderCourses.asp?CourseId=6577&ProviderId=245&SecId=190945">CPCS A31 - Ride on Roller - Novice</option>
+</select>
+
+<main class="page-content">
+    <div class="container-fluid">
+        <iframe id="iframe" src="https://booking.GeniusSoftware.co.uk/ProviderEvents.asp?ProviderId=245&SecId=190945" frameborder="0" width="100%" height="1800" marginwidth="0"></iframe>
+    </div>
+</main>
+
+</body>
+
+<script type="text/javascript">
+    function update_iframe_src(selected){
+
+        var defaultSrc = "https://booking.GeniusSoftware.co.uk/ProviderEvents.asp?ProviderId=245&SecId=190945";
+        
+        if(selected != ""){
+            document.getElementById("iframe").src = selected;
+        }else{
+            document.getElementById("iframe").src = defaultSrc;
+        }
+
+        return true;
+    }
+</script>
+
+</html>
